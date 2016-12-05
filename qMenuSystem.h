@@ -19,7 +19,7 @@
 class qMenuSystem
 {
   public:
-    qMenuSystem(DigoleSerialDisp disp);
+    qMenuSystem(Adafruit_SSD1306 *disp);
     void InitMenu(const char ** page, int itemCount, int selectedIndex);
     int ProcessMenu(int action);
     void ShowMenu();

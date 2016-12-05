@@ -1,13 +1,17 @@
-#define _Digole_Serial_SPI_
-#include <DigoleSerial.h>
+#include <SPI.h>
+#include <Wire.h>
+
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
 #ifndef qMenuDisplay_h
 #define qMenuDisplay_h
 
 class qMenuDisplay
 {
   public:
-    qMenuDisplay(DigoleSerialDisp disp);
+    qMenuDisplay(Adafruit_SSD1306 *disp);
     qMenuDisplay();
+    void Begin();
     void Start();
     void Finish();
     void Title(const char text[]);
@@ -15,6 +19,8 @@ class qMenuDisplay
     void Highlight(int index);
     void MessageBox(const char text[]);
   private:
+	Adafruit_SSD1306 *_disp;
+       int textHeight = 14;
 //    char tempBuffer[32];
 };
 

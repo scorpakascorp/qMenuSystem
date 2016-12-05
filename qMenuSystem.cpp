@@ -11,9 +11,11 @@
 //DigoleSerialDisp disp(255,255,255);
 //qMenuDisplay qmd;
 
-qMenuSystem::qMenuSystem(DigoleSerialDisp disp)
+qMenuSystem::qMenuSystem(Adafruit_SSD1306 *disp)
 {
+   
   qmd=qMenuDisplay(disp);
+   
   _selectedIndex=0;
   _itemCount=0;
   _firstVisible=1;
@@ -21,6 +23,7 @@ qMenuSystem::qMenuSystem(DigoleSerialDisp disp)
 
 void qMenuSystem::InitMenu(const char ** page, int itemCount, int selectedIndex)
 {
+qmd.Begin();
   CurrentMenu=page;
   _selectedIndex=selectedIndex;
   _itemCount=itemCount;
