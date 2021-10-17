@@ -62,5 +62,5 @@ void qMenuDisplay::MessageBox(const char text[])
 
   _disp->setCursor(x, y + 5 - textHeight / 2);
   _disp->print(text);
-  //_disp->display();
+  _disp->display();
 }
