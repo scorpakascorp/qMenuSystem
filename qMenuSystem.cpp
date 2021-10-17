@@ -39,9 +39,11 @@ int qMenuSystem::ProcessMenu(int action)
     _selectedIndex--;
     
   if (_selectedIndex>_itemCount)
-    _selectedIndex=1;
-  if (_selectedIndex<1)
+    // _selectedIndex=1;
     _selectedIndex=_itemCount;
+  if (_selectedIndex<1)
+    // _selectedIndex=_itemCount;
+    _selectedIndex=1;
   
   if (action==ACTION_SELECT)
     return _selectedIndex;
