@@ -55,8 +55,8 @@ int qMenuSystem::ProcessMenu(int action)
 
 void qMenuSystem::ShowMenu()
 {
-  if (_selectedIndex>_firstVisible+2)
-    _firstVisible=_selectedIndex-2;
+  if (_selectedIndex>_firstVisible+3)
+    _firstVisible=_selectedIndex-3;
   else if (_selectedIndex<_firstVisible)
     _firstVisible=_selectedIndex;
   
@@ -67,7 +67,7 @@ void qMenuSystem::ShowMenu()
   qmd.Title(tempBuffer);
   
   // display items
-  int p = 3;
+  int p = 4;
   if (p > (_itemCount-_firstVisible+1))
     p=_itemCount-_firstVisible+1;
   for (int i=0;i<p;i++)
