@@ -35,14 +35,14 @@ void qMenuDisplay::Title(const char text[])
 
 void qMenuDisplay::Item(int index, const char text[])
 {
-  _disp->setCursor(2, (index * 10) + 21 - textHeight / 2);
+  _disp->setCursor(2, (index * 13) + 22 - textHeight / 2);
   _disp->print(text);
 }
 
 void qMenuDisplay::Highlight(int index)
 {
-  for (int i = 0; i < 9; i++)
-    _disp->drawFastHLine(0, (index * 10) + 13 + i, 127, INVERSE);
+  for (int i = 0; i < 11; i++)
+    _disp->drawFastHLine(0, (index * 13) + 13 + i, 127, INVERSE);
 }
 
 void qMenuDisplay::MessageBox(const char text[])
